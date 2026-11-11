@@ -1,0 +1,16 @@
+# Se instala con: sudo sed "s/TU_USUARIO/$USER/g" biosense-edge.service | sudo tee /etc/systemd/system/biosense-edge.service
+[Unit]
+Description=BIOSENSE edge (Heltec RX -> MQTT local -> CSV -> ThingsBoard)
+After=network-online.target mosquitto.service
+Wants=network-online.target
+
+[Service]
+User=TU_USUARIO
+WorkingDirectory=/home/TU_USUARIO/biosense_edge
+EnvironmentFile=/home/TU_USUARIO/biosense_edge/biosense.env
+ExecStart=/home/TU_USUARIO/biosense_edge/venv/bin/python biosense_edge.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

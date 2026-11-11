@@ -1,0 +1,20 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "sd_logger.c"
+        "wifi_sta.c"
+        "mqtt_pub.c"
+    INCLUDE_DIRS "."
+    REQUIRES
+        driver
+        esp_timer
+        fatfs
+        sdmmc
+        vfs
+        esp_wifi
+        esp_event
+        esp_netif
+        nvs_flash
+        biosense_common
+        sx1262
+)

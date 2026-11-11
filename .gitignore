@@ -1,0 +1,25 @@
+# ESP-IDF
+build/
+managed_components/
+sdkconfig
+sdkconfig.old
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Nodo RX
+nodo_rx/build/
+nodo_rx/managed_components/
+
+# Nodo TX
+nodo_tx/build/
+nodo_tx/managed_components/
+
+# Archivos compilados
+*.bin
+*.elf
+*.map
